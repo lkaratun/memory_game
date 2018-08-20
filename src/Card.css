@@ -1,0 +1,45 @@
+.card {
+	display: block;
+	height: 10vw;
+	width: 10vw;
+	margin: 0.5vw;
+	border-radius: 1vw;
+	background-color: #808080;
+	border: 0.2vw solid #808080;
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+	box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	transition: background-color .1s ease-in;
+	cursor: pointer;
+}
+.card.small {
+	height: 5vw;
+	width: 5vw;
+	margin: 0.25vw;
+	border-width: 0.1vw;
+}
+.card.medium {
+	height: 7.5vw;
+	width: 7.5vw;
+	margin: 0.375vw;
+	border-width: 0.15vw;
+}
+@media screen and (max-width: 680px) {
+	.card {
+		height: 19vw;
+		width: 19vw;
+		margin: 1vw;
+		border: 0.3vw solid #808080;
+	}
+	.card.small {
+		height: 10vw;
+		width: 10vw;
+		margin: 0.5vw;
+		border-width: 0.15vw;
+	}
+	.card.medium {
+		height: 15vw;
+		width: 15vw;
+		margin: 0.75vw;
+		border-width: 0.225vw;
+	}
+}
