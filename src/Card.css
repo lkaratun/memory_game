@@ -1,26 +1,35 @@
 .card {
 	display: block;
-	height: 10vw;
-	width: 10vw;
-	margin: 0.5vw;
-	border-radius: 1vw;
 	background-color: #808080;
 	border: 0.2vw solid #808080;
 	/* offset-x | offset-y | blur-radius | spread-radius | color */
 	box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 	transition: background-color .1s ease-in;
 	cursor: pointer;
+	border-radius: 1vw;
+	/* margin: 0.5vw;
+	border-radius: 1vw;
+	height: 10vw;
+	width: 10vw; */
+
+}
+.card.large {
+	height: 10vw;
+	width: 10vw;
+	margin: 0.5vw;
 }
 .card.small {
-	height: 5vw;
-	width: 5vw;
+	height: 8vw;
+	width: 8vw;
 	margin: 0.25vw;
 	border-width: 0.1vw;
+	margin: 0.375vw;
+	border-width: 0.15vw;	
 }
 .card.medium {
-	height: 7.5vw;
-	width: 7.5vw;
-	margin: 0.375vw;
+	height: 10vw;
+	width: 10vw;
+	margin: 0.5vw;
 	border-width: 0.15vw;
 }
 @media screen and (max-width: 680px) {
