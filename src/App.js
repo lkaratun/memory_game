@@ -5,10 +5,9 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { turnsTaken: 0, win: false };
+    this.state = { turnsTaken: 0 };
     this.incrementTurnCounter = this.incrementTurnCounter.bind(this);
     this.resetTurnCounter = this.resetTurnCounter.bind(this);
-
   }
 
   incrementTurnCounter() {
@@ -18,6 +17,7 @@ class App extends Component {
   resetTurnCounter() {
     this.setState({ turnsTaken: 0 });
   }
+
   render() {
     return (
       <div className="App">

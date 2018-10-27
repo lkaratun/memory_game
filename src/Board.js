@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import Card from "./Card";
 import NavBar from "./NavBar";
+import WinPopUp from "./WinPopUp";
 import "./Board.css";
 
-const numCardsEasy = 4;
+const numCardsEasy = 16;
 const numCardsMedium = 24;
 const numCardsHard = 32;
 
@@ -16,7 +17,8 @@ class Board extends Component {
       currentDifficulty: "easy",
       openedCards: 0,
       firstCard: null,
-      secondCard: null
+      secondCard: null,
+      win: false
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -72,7 +74,13 @@ class Board extends Component {
     let cards = this.shuffleArray(
       this.state.cards.map(d => ({ ...d, opened: false }))
     );
-    this.setState({ cards, openedCards: 0 });
+    this.setState({
+      cards,
+      openedCards: 0,
+      firstCard: null,
+      secondCard: null,
+      win: false
+    });
     this.props.handleReset();
   }
 
@@ -149,7 +157,9 @@ class Board extends Component {
         this.setState(
           prevState => ({ openedCards: prevState.openedCards + 2 }),
           () => {
-            if (this.checkWin()) alert("Nicely done!");
+            if (this.checkWin()) {
+              this.setState({ win: true });
+            }
           }
         );
       }
@@ -193,6 +203,7 @@ class Board extends Component {
           handleDifficultyClick={this.changeDifficulty}
         />
         <div className="board">{cards}</div>
+        <WinPopUp visible={this.state.win} handleReset={this.resetGame} />
       </div>
     );
   } //render

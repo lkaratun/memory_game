@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.5.4",
+    "eslint-config-react-app": "^3.0.4",
     "popper.js": "^1.14.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",

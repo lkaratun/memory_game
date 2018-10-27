@@ -1,5 +1,6 @@
 #instructions {
-	text-align: center;
-	font-weight: bold;
-	font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: hsl(45, 17%, 24%);
 }
