@@ -95,6 +95,7 @@ class Board extends Component {
     this.setState({
       cards: this.init(difficulty),
       firstCard: null,
+      secondCard: null,
       clicksBlocked: false,
       currentDifficulty: difficulty,
       openedCards: 0
