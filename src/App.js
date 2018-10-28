@@ -18,12 +18,14 @@ class App extends Component {
     this.setState({ turnsTaken: 0 });
   }
 
+
   render() {
     return (
       <div className="App">
         <Board
           handleMove={this.incrementTurnCounter}
           handleReset={this.resetTurnCounter}
+          
         />
         <p id="instructions">
           Find pairs of cards with the same color to win! <br />

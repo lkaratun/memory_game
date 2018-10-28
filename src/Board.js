@@ -25,6 +25,7 @@ class Board extends Component {
     this.resetGame = this.resetGame.bind(this);
     this.changeDifficulty = this.changeDifficulty.bind(this);
     this.checkWin = this.checkWin.bind(this);
+    this.closePopup = this.closePopup.bind(this);
   }
 
   init(difficulty) {
@@ -170,6 +171,10 @@ class Board extends Component {
     }
   }
 
+  closePopup() {
+    this.setState({win: false});
+  }
+
   render() {
     let cardSize;
     switch (this.state.currentDifficulty) {
@@ -203,7 +208,7 @@ class Board extends Component {
           handleDifficultyClick={this.changeDifficulty}
         />
         <div className="board">{cards}</div>
-        <WinPopUp visible={this.state.win} handleReset={this.resetGame} />
+        <WinPopUp visible={this.state.win} handleReset={this.resetGame} handleClose={this.closePopup} />
       </div>
     );
   } //render
