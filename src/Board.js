@@ -6,7 +6,7 @@ import "./Board.css";
 
 const numCardsEasy = 16;
 const numCardsMedium = 24;
-const numCardsHard = 32;
+const numCardsHard = 30;
 
 class Board extends Component {
   constructor(props) {
@@ -173,7 +173,7 @@ class Board extends Component {
   }
 
   closePopup() {
-    this.setState({win: false});
+    this.setState({ win: false });
   }
 
   render() {
@@ -209,7 +209,11 @@ class Board extends Component {
           handleDifficultyClick={this.changeDifficulty}
         />
         <div className="board">{cards}</div>
-        <WinPopUp visible={this.state.win} handleReset={this.resetGame} handleClose={this.closePopup} />
+        <WinPopUp
+          visible={this.state.win}
+          handleReset={this.resetGame}
+          handleClose={this.closePopup}
+        />
       </div>
     );
   } //render
