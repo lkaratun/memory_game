@@ -22,15 +22,19 @@ nav {
 #buttons {
   display: flex;
   flex-flow: row nowrap;
-  margin-right: 10%;
+  margin-right: 5%;
   margin-left: auto;
+  align-items: center;
+}
+span {
+  display: inline-block;
 }
 
 button {
   display: block;
-  width: 8vw;
+  min-width: 12em;
   padding: 1vw;
-  margin: 1vw 2vw;
+  margin: 1vw;
   border: 1px solid white;
   border-radius: 5px;
   color: white;
@@ -69,15 +73,15 @@ button:hover {
   flex-flow: column nowrap;
   align-items: center;
 }
-.dropbtn {
+/* .dropbtn {
   display: inline-flex;
   justify-content: space-between;
   box-sizing: border-box;
   min-width: 7em;
-}
-#NewGame {
+} */
+/* #NewGame {
   text-align: center;
   box-sizing: border-box;
   display: inline-block;
   min-width: 7em;
-}
+} */

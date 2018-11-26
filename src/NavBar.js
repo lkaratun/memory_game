@@ -34,6 +34,14 @@ class NavBar extends Component {
 
             return (
               <div id="buttons">
+                {context.loggedIn ? (
+                  <span>
+                    Logged in as: {context.firstName} {context.lastName}
+                  </span>
+                ) : (
+                  <span>Not logged in</span>
+                )}
+
                 <button id="NewGame" onClick={this.props.handleNewGameClick}>
                   New game
                 </button>
@@ -48,16 +56,19 @@ class NavBar extends Component {
                   </div>
                 </div>
                 {context.loggedIn ? (
-                  <Fragment>
-                    <div>Hi {context.firstName}!</div>
-                    <GoogleLogout buttonText="Logout" onLogoutSuccess={context.logOut} onFailure={console.error} />
-                  </Fragment>
+                  <GoogleLogout
+                    buttonText="Logout"
+                    onLogoutSuccess={context.logOut}
+                    onFailure={console.error}
+                    render={renderProps => <button onClick={renderProps.onClick}>Log out</button>}
+                  />
                 ) : (
                   <GoogleLogin
                     clientId="21137127004-b47734i7g9hptsga32ai7o9ktedtv0m1.apps.googleusercontent.com"
                     buttonText="Login"
                     onSuccess={context.logIn}
                     onFailure={console.error}
+                    render={renderProps => <button onClick={renderProps.onClick}>Log in with Google</button>}
                   />
                 )}
               </div>

@@ -5,7 +5,7 @@ export const AuthContext = React.createContext();
 export class ContextProvider extends Component {
   logIn = data => {
     // console.log(data);
-    this.setState({ loggedIn: true, firstName: data.profileObj.givenName });
+    this.setState({ loggedIn: true, firstName: data.profileObj.givenName, lastName: data.profileObj.familyName });
   };
   logOut = () => {
     this.setState({ loggedIn: false });
