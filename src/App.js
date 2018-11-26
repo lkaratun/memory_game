@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Board from "./Board";
+
 import { ContextProvider } from "./AuthContext";
+import Board from "./Board";
 import "./App.css";
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <ContextProvider value={this.state}>
         <div className="App">
+
           <Board handleMove={this.incrementTurnCounter} handleReset={this.resetTurnCounter} />
           <p id="instructions">
             Find pairs of cards with the same color to win! <br />
