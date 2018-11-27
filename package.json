@@ -5,7 +5,6 @@
   "dependencies": {
     "ajv": "^6.5.4",
     "babel-eslint": "^9.0.0",
-    "eslint": "^5.9.0",
     "eslint-config-react": "^1.1.7",
     "eslint-config-react-app": "^3.0.5",
     "eslint-plugin-flowtype": "^2.50.3",
@@ -28,5 +27,11 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {},
-  "optionalDependencies": {}
+  "optionalDependencies": {},
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
