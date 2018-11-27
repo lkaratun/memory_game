@@ -4,20 +4,22 @@
   border: 0.2vw solid #808080;
   /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: all 0.1s linear;
+  /* transition: all 0.1s linear; */
   cursor: pointer;
   border-radius: 1vw;
+  width: 100%;
+  height: 100%;
 }
 .closed {
   background-color: #e2e2e2;
   background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23282828' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
-.card.large {
+.react-card-flip.large {
   height: 10vw;
   width: 10vw;
   margin: 0.5vw;
 }
-.card.small {
+.react-card-flip.small {
   height: 8vw;
   width: 8vw;
   margin: 0.25vw;
@@ -25,29 +27,49 @@
   margin: 0.375vw;
   border-width: 0.15vw;
 }
-.card.medium {
+.react-card-flip.medium {
   height: 10vw;
   width: 10vw;
   margin: 0.5vw;
   border-width: 0.15vw;
 }
 @media screen and (max-width: 1200px) {
-  .card.large {
+  .react-card-flip.large {
     height: 19vw;
     width: 19vw;
     margin: 1vw;
     border: 0.3vw solid #808080;
   }
-  .card.small {
+  .react-card-flip.small {
     height: 16vw;
     width: 16vw;
     margin: 0.5vw;
     border-width: 0.15vw;
   }
-  .card.medium {
+  .react-card-flip.medium {
     height: 19vw;
     width: 19vw;
     margin: 0.75vw;
     border-width: 0.225vw;
   }
+  .react-card-flip {
+    height: 19vw;
+    width: 19vw;
+    margin: 1vw;
+    border-radius: 0.3vw;
+  }
+  .react-card-front, .react-card-back, .react-card-flipper {
+    height: 100%;
+    width:100%;
+  }
+}
+
+.react-card-flip {
+  height: 11vw;
+  width: 11vw;
+  margin: 0.5vw;
+}
+.react-card-front, .react-card-back, .react-card-flipper {
+  height: 100%;
+  width:100%;
 }

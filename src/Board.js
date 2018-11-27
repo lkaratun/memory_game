@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Card from "./Card";
 import NavBar from "./NavBar";
 import WinPopUp from "./WinPopUp";
 import "./Board.css";
+import CardFlipper from "./CardFlipper";
 
 const numCardsEasy = 16;
 const numCardsMedium = 24;
@@ -72,9 +72,7 @@ class Board extends Component {
   }
 
   resetGame() {
-    let cards = this.shuffleArray(
-      this.state.cards.map(d => ({ ...d, opened: false }))
-    );
+    let cards = this.shuffleArray(this.state.cards.map(d => ({ ...d, opened: false })));
     this.setState({
       cards,
       openedCards: 0,
@@ -87,9 +85,7 @@ class Board extends Component {
 
   changeDifficulty(difficulty) {
     if (difficulty === this.state.currentDifficulty) {
-      alert(
-        'Please use the "New Game" button to start a new game with the same difficulty'
-      );
+      alert('Please use the "New Game" button to start a new game with the same difficulty');
       return;
     }
     this.setState({
@@ -104,12 +100,9 @@ class Board extends Component {
   }
   checkWin() {
     return (
-      (this.state.currentDifficulty === "easy" &&
-        this.state.openedCards === numCardsEasy) ||
-      (this.state.currentDifficulty === "medium" &&
-        this.state.openedCards === numCardsMedium) ||
-      (this.state.currentDifficulty === "hard" &&
-        this.state.openedCards === numCardsHard)
+      (this.state.currentDifficulty === "easy" && this.state.openedCards === numCardsEasy) ||
+      (this.state.currentDifficulty === "medium" && this.state.openedCards === numCardsMedium) ||
+      (this.state.currentDifficulty === "hard" && this.state.openedCards === numCardsHard)
     );
   }
 
@@ -118,28 +111,23 @@ class Board extends Component {
     return colors[colorIndex];
   }
   handleClick(clickedCard, e) {
+    console.log("handleClick in Board");
     //When clicked too fast or an opened card clicked, do nothing
     if (this.state.clicksBlocked || clickedCard.opened) return;
     this.flipCard(clickedCard);
   }
   resetCards(cardsToReset) {
     let newCards = this.state.cards.map(card => {
-      if (cardsToReset.map(d => d.key).includes(card.key))
-        return { ...card, opened: false };
+      if (cardsToReset.map(d => d.key).includes(card.key)) return { ...card, opened: false };
       else return card;
     });
     this.setState({ clicksBlocked: true }, () =>
-      setTimeout(
-        () => this.setState({ cards: newCards, clicksBlocked: false }),
-        500
-      )
+      setTimeout(() => this.setState({ cards: newCards, clicksBlocked: false }), 500)
     );
   }
 
   flipCard(clickedCard) {
-    let newCards = this.state.cards.map(
-      card => (card.key === clickedCard.key ? { ...card, opened: true } : card)
-    );
+    let newCards = this.state.cards.map(card => (card.key === clickedCard.key ? { ...card, opened: true } : card));
     if (this.state.firstCard) {
       this.setState({ cards: newCards, secondCard: clickedCard });
     } else {
@@ -193,7 +181,7 @@ class Board extends Component {
     }
     const cards = this.state.cards.map(d => {
       return (
-        <Card
+        <CardFlipper
           color={d.color}
           key={d.key}
           opened={d.opened}
@@ -204,16 +192,9 @@ class Board extends Component {
     }); //map
     return (
       <div>
-        <NavBar
-          handleNewGameClick={this.resetGame}
-          handleDifficultyClick={this.changeDifficulty}
-        />
+        <NavBar handleNewGameClick={this.resetGame} handleDifficultyClick={this.changeDifficulty} />
         <div className="board">{cards}</div>
-        <WinPopUp
-          visible={this.state.win}
-          handleReset={this.resetGame}
-          handleClose={this.closePopup}
-        />
+        <WinPopUp visible={this.state.win} handleReset={this.resetGame} handleClose={this.closePopup} />
       </div>
     );
   } //render
@@ -400,16 +381,7 @@ Board.defaultProps = {
     "#FFFFFF",
     "#000000"
   ],
-  easyColors: [
-    "#1D2B53",
-    "#00E436",
-    "#FFF1E8",
-    "#29ADFF",
-    "#AB5236",
-    "#FF77A8",
-    "#FFEC27",
-    "#FF004D"
-  ]
+  easyColors: ["#1D2B53", "#00E436", "#FFF1E8", "#29ADFF", "#AB5236", "#FF77A8", "#FFEC27", "#FF004D"]
 };
 
 export default Board;
