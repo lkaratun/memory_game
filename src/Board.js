@@ -84,10 +84,6 @@ class Board extends Component {
   }
 
   changeDifficulty(difficulty) {
-    if (difficulty === this.state.currentDifficulty) {
-      alert('Please use the "New Game" button to start a new game with the same difficulty');
-      return;
-    }
     this.setState({
       cards: this.init(difficulty),
       firstCard: null,
