@@ -1,7 +1,8 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import "./NavBar.css";
 import { AuthContext } from "./AuthContext";
+import UserButton from "./UserButton";
 
 class NavBar extends Component {
   constructor(props) {
@@ -29,7 +30,6 @@ class NavBar extends Component {
 
         <AuthContext.Consumer>
           {context => {
-            // console.log(context);
             window.context = context;
 
             return (
@@ -55,22 +55,7 @@ class NavBar extends Component {
                     <button onClick={() => this.props.handleDifficultyClick("hard")}>Hard</button>
                   </div>
                 </div>
-                {context.loggedIn ? (
-                  <GoogleLogout
-                    buttonText="Logout"
-                    onLogoutSuccess={context.logOut}
-                    onFailure={console.error}
-                    render={renderProps => <button onClick={renderProps.onClick}>Log out</button>}
-                  />
-                ) : (
-                  <GoogleLogin
-                    clientId="21137127004-b47734i7g9hptsga32ai7o9ktedtv0m1.apps.googleusercontent.com"
-                    buttonText="Login"
-                    onSuccess={context.logIn}
-                    onFailure={console.error}
-                    render={renderProps => <button onClick={renderProps.onClick}>Log in with Google</button>}
-                  />
-                )}
+                <UserButton />
               </div>
             );
           }}
