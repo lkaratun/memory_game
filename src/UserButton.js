@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
-// import "./UserButton.css";
+import "./UserButton.css";
 import { AuthContext } from "./AuthContext";
 
 class UserButton extends Component {
@@ -13,7 +13,9 @@ class UserButton extends Component {
               buttonText="Logout"
               onLogoutSuccess={context.logOut}
               onFailure={console.error}
-              render={renderProps => <button onClick={renderProps.onClick}>Log out</button>}
+              render={renderProps => (
+                <img src="/person.svg" title="Log out" alt="User icon" onClick={renderProps.onClick} />
+              )}
             />
           ) : (
             <GoogleLogin
@@ -21,7 +23,9 @@ class UserButton extends Component {
               buttonText="Login"
               onSuccess={context.logIn}
               onFailure={console.error}
-              render={renderProps => <button onClick={renderProps.onClick}>Log in with Google</button>}
+              render={renderProps => (
+                <img src="/person.svg" title="Log in" alt="User icon" onClick={renderProps.onClick} />
+              )}
             />
           );
         }}
