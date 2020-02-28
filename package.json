@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.5.4",
-    "babel-eslint": "^9.0.0",
     "eslint-config-react": "^1.1.7",
     "eslint-config-react-app": "^3.0.5",
     "eslint-plugin-flowtype": "^2.50.3",
@@ -27,7 +26,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "serve": "^11.3.0"
+  },
   "optionalDependencies": {},
   "browserslist": [
     ">0.2%",
